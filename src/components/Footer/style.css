@@ -1,0 +1,33 @@
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-next {
+    width: 216px;
+    height: 68px;
+    border-radius: 10px;
+    background: #f1e1e8;
+    box-shadow: 0 5px 0 0 #301A6B;
+    border: none;
+
+    color: #000;
+    text-align: center;
+    font-family: Caveat;
+    font-size: 33px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    cursor: pointer;
+}
+
+.button-next:hover {
+    background: #fff;
+}
+
+.button-next:active {
+    background: #f1e1e8;
+    transform: translateY(2px);
+    box-shadow: 0 3px 0 0 #301A6B;
+}

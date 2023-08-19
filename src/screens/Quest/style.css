@@ -1,0 +1,37 @@
+.quest {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #FFF;
+}
+
+.question {
+    text-align: center;
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.answer-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 40px;
+
+    margin-top: 60px;
+}
+
+.answer {
+    display: flex;
+    width: 300px;
+    min-height: 67px;
+    padding: 30px 40px;
+
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    border: 2px solid #FFF;
+    background: rgba(217, 217, 217, 0.20);
+
+    font-size: 25px;
+}

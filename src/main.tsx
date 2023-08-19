@@ -1,7 +1,13 @@
 import ReactDOM from 'react-dom/client';
-import App from './App.tsx';
 import './index.css';
+import { Header } from "./components/Header";
+import { Quest } from "./screens/Quest";
+import { Footer } from "./components/Footer";
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-    <App />
+    <div className="container">
+        <Header />
+        <Quest />
+        <Footer />
+    </div>
 );
