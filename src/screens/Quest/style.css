@@ -34,4 +34,32 @@
     background: rgba(217, 217, 217, 0.20);
 
     font-size: 25px;
+    cursor: pointer;
+}
+
+.answer:hover {
+    background: #C8435E;
+}
+
+.answer label {
+    cursor: pointer;
+}
+
+.answer-checked {
+    animation: 0.5s infinite normal check;
+    animation-iteration-count: 1;
+}
+
+@keyframes check {
+    0% {
+        background: #C8435E;
+    }
+
+    50% {
+        background: rgba(200, 67, 94, 0);
+    }
+
+    100% {
+        background: #C8435E;
+    }
 }
