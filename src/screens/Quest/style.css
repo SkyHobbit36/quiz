@@ -38,28 +38,19 @@
 }
 
 .answer:hover {
-    background: #C8435E;
+    background: rgba(217, 217, 217, 0.1);
 }
 
 .answer label {
     cursor: pointer;
 }
 
-.answer-checked {
-    animation: 0.5s infinite normal check;
-    animation-iteration-count: 1;
+.answer-correct,
+.answer-correct:hover {
+    background: #1d8b0e;
 }
 
-@keyframes check {
-    0% {
-        background: #C8435E;
-    }
-
-    50% {
-        background: rgba(200, 67, 94, 0);
-    }
-
-    100% {
-        background: #C8435E;
-    }
+.answer-wrong,
+.answer-wrong:hover {
+    background: #911425;
 }
