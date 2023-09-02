@@ -1,4 +1,4 @@
-import { AnswerStatus } from "../constants/answer-status.enum";
+import { AnswerStatus } from "../constants";
 
 export interface Answer {
     id: number;

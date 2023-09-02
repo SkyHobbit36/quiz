@@ -1,4 +1,4 @@
-import { AnswerStatus } from "./constants/answer-status.enum";
+import { AnswerStatus } from "./constants";
 import { Quest } from "./interfaces/quest.interface";
 
 export const questList: Quest[] = [

@@ -3,8 +3,9 @@ import { questList } from '../../data';
 import { useState } from "react";
 import { Quest } from "../../interfaces/quest.interface";
 import { checkSolution } from '../../utils/solutions';
-import { AnswerStatus } from '../../constants/answer-status.enum';
+import { AnswerStatus } from '../../constants';
 import { ButtonNext } from '../../components/common/ButtonNext';
+import { AnswerComp } from '../../components/Answer';
 
 export function QuestComponent() {
     const [quest, setQuest] = useState<Quest>(questList[0]);
@@ -33,15 +34,6 @@ export function QuestComponent() {
     return <div className="quest">
         <div className="question">{quest?.question}</div>
         <ButtonNext />
-        <div className="answer-list">
-            {quest?.answers.map((quest) => (
-                <div className={
-                    `answer`
-                    + `${quest.checked ? ' answer-checked' : ''}`
-                    + `${quest.status === AnswerStatus.CORRECT ? ' answer-correct' : ''}`
-                    + `${quest.status === AnswerStatus.WRONG ? ' answer-wrong' : ''}`
-                } key={quest.id} onClick={() => selectAnswer(quest.id)}>{quest.description}</div>
-            ))}
-        </div>
+        <div className="answer-list">{quest?.answers.map((answer) => <AnswerComp selectAnswer={selectAnswer} answer={answer} />)}</div>
     </div>;
 }
