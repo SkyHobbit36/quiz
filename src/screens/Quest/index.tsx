@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Quest } from "../../interfaces/quest.interface";
 import { checkSolution } from '../../utils/solutions';
 import { AnswerStatus } from '../../constants/answer-status.enum';
+import { ButtonNext } from '../../components/common/ButtonNext';
 
 export function QuestComponent() {
     const [quest, setQuest] = useState<Quest>(questList[0]);
@@ -18,7 +19,7 @@ export function QuestComponent() {
         setQuest({
             ...quest,
             answers: quest.answers.map(answer => {
-                if(answer.id === select) {
+                if (answer.id === select) {
                     return {
                         ...answer,
                         status: isSolution ? AnswerStatus.CORRECT : AnswerStatus.WRONG,
@@ -31,10 +32,11 @@ export function QuestComponent() {
 
     return <div className="quest">
         <div className="question">{quest?.question}</div>
+        <ButtonNext />
         <div className="answer-list">
             {quest?.answers.map((quest) => (
                 <div className={
-                    `answer` 
+                    `answer`
                     + `${quest.checked ? ' answer-checked' : ''}`
                     + `${quest.status === AnswerStatus.CORRECT ? ' answer-correct' : ''}`
                     + `${quest.status === AnswerStatus.WRONG ? ' answer-wrong' : ''}`

@@ -1,39 +1,38 @@
 .footer {
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    justify-content: space-around;
+    color: #fff;
 }
 
-.button-next {
-    width: 216px;
-    height: 68px;
-    border-radius: 10px;
-    background: #f1e1e8;
-    box-shadow: 0 5px 0 0 #301A6B;
-    border: none;
-
-    color: #000;
-    text-align: center;
-    font-family: Caveat;
-    font-size: 33px;
-    font-style: normal;
-    font-weight: 700;
+.footer-info {
+    font-size: 20px;
+    font-weight: 400;
     line-height: normal;
-    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.button-next:hover {
-    background: #fff;
-}
-
-.button-next:active {
-    background: #f1e1e8;
-    transform: translateY(2px);
-    box-shadow: 0 3px 0 0 #301A6B;
+.footer-info p {
+    margin: 5px;
 }
 
 .remnant {
-    margin-top: 5px;
-    font-size: 24px;
+    font-size: 30px;
+    font-weight: 700;
+    font-weight: 700;
+}
+
+.what-is-it {
+    color: #ff7893;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.what-is-it:hover {
+    text-decoration: underline;
 }

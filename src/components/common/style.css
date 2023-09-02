@@ -1,0 +1,37 @@
+.button-next {
+    width: 260px;
+    height: 68px;
+    /* padding: 0 35px; */
+    border-radius: 10px;
+    background: #f1e1e8;
+    box-shadow: 0 5px 0 0 #301A6B;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+
+    color: #000;
+    text-align: center;
+    font-family: Caveat;
+    font-size: 33px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    cursor: pointer;
+}
+
+.logo {
+    height: 68px;
+    fill: #301A6B;
+}
+
+.button-next:hover {
+    background: #fff;
+}
+
+.button-next:active {
+    background: #f1e1e8;
+    transform: translateY(2px);
+    box-shadow: 0 3px 0 0 #301A6B;
+}
