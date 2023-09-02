@@ -1,0 +1,32 @@
+.answer {
+    display: flex;
+    min-height: 67px;
+    padding: 30px 40px;
+
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    border: 2px solid #FFF;
+    background: rgba(217, 217, 217, 0.20);
+
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.answer:hover {
+    background: rgba(217, 217, 217, 0.1);
+}
+
+.answer label {
+    cursor: pointer;
+}
+
+.answer-correct,
+.answer-correct:hover {
+    background: linear-gradient(300deg, #3590b3 0%, #2dc97a 100%);
+}
+
+.answer-wrong,
+.answer-wrong:hover {
+    background: linear-gradient(294deg, #c12961 0%, #bb387a 100%);
+}

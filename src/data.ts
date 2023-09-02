@@ -1,10 +1,11 @@
-import { AnswerStatus } from "./constants";
-import { Quest } from "./interfaces/quest.interface";
+import { AnswerStatus, QuestType } from './constants';
+import { Quest } from './interfaces/quest.interface';
 
 export const questList: Quest[] = [
     {
         id: 0,
         question: 'Очень важный вопрос. Когда?',
+        type: QuestType.TEXT,
         answers: [
             {
                 id: 1,
@@ -28,4 +29,4 @@ export const questList: Quest[] = [
             },
         ]
     },
-]
+];

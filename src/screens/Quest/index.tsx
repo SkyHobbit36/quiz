@@ -1,11 +1,11 @@
 import './style.css';
 import { questList } from '../../data';
-import { useState } from "react";
-import { Quest } from "../../interfaces/quest.interface";
+import { useState } from 'react';
+import { Quest } from '../../interfaces/quest.interface';
 import { checkSolution } from '../../utils/solutions';
 import { AnswerStatus } from '../../constants';
 import { ButtonNext } from '../../components/common/ButtonNext';
-import { AnswerComp } from '../../components/Answer';
+import { AnswerComponent } from '../../components/Answer';
 
 export function QuestComponent() {
     const [quest, setQuest] = useState<Quest>(questList[0]);
@@ -24,7 +24,7 @@ export function QuestComponent() {
                     return {
                         ...answer,
                         status: isSolution ? AnswerStatus.CORRECT : AnswerStatus.WRONG,
-                    }
+                    };
                 }
                 return answer;
             }),
@@ -34,6 +34,10 @@ export function QuestComponent() {
     return <div className="quest">
         <div className="question">{quest?.question}</div>
         <ButtonNext />
-        <div className="answer-list">{quest?.answers.map((answer) => <AnswerComp selectAnswer={selectAnswer} answer={answer} />)}</div>
+        <div className="answer-list">{quest?.answers.map((answer) => <AnswerComponent
+            selectAnswer={selectAnswer}
+            answer={answer}
+            type={quest?.type}
+        />)}</div>
     </div>;
 }

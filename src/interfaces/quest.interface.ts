@@ -1,4 +1,4 @@
-import { AnswerStatus } from "../constants";
+import { AnswerStatus, QuestType } from '../constants';
 
 export interface Answer {
     id: number;
@@ -9,6 +9,7 @@ export interface Answer {
 
 export interface Quest {
     id: number;
+    type: QuestType;
     question: string;
     answers: Answer[];
 }
