@@ -2,8 +2,8 @@ import { AnswerStatus, QuestType } from '../constants';
 
 export interface Answer {
     id: number;
-    status: AnswerStatus;
-    description: string;
+    status?: AnswerStatus;
+    description?: string;
     checked?: boolean;
 }
 

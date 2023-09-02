@@ -1,0 +1,19 @@
+.answer-list {
+    grid-column: 1/3;
+    display: grid;
+    margin-top: 60px;
+    align-items: center;
+    justify-content: center;
+}
+
+.answer-list-images {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 80px;
+}
+
+.answer-list-text {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 40px;
+}

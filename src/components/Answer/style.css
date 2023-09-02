@@ -1,8 +1,5 @@
 .answer {
     display: flex;
-    min-height: 67px;
-    padding: 30px 40px;
-
     justify-content: center;
     align-items: center;
     border-radius: 20px;
@@ -11,6 +8,25 @@
 
     font-size: 25px;
     cursor: pointer;
+}
+
+.answer-images {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.answer-images .answer {
+    width: 77px;
+    height: 67px;
+    padding: 0 3px 1px 0px;
+}
+
+.answer-text {
+    min-height: 67px;
+    padding: 30px 40px;
 }
 
 .answer:hover {

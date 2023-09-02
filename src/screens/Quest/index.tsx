@@ -6,9 +6,10 @@ import { checkSolution } from '../../utils/solutions';
 import { AnswerStatus } from '../../constants';
 import { ButtonNext } from '../../components/common/ButtonNext';
 import { AnswerComponent } from '../../components/Answer';
+import { AnswerList } from '../../components/AnswerList';
 
 export function QuestComponent() {
-    const [quest, setQuest] = useState<Quest>(questList[0]);
+    const [quest, setQuest] = useState<Quest>(questList[1]);
 
     function selectAnswer(select: number) {
         if (!quest) {
@@ -34,10 +35,12 @@ export function QuestComponent() {
     return <div className="quest">
         <div className="question">{quest?.question}</div>
         <ButtonNext />
-        <div className="answer-list">{quest?.answers.map((answer) => <AnswerComponent
-            selectAnswer={selectAnswer}
-            answer={answer}
-            type={quest?.type}
-        />)}</div>
+        <AnswerList type={quest?.type}>
+            {quest?.answers.map((answer) => <AnswerComponent
+                selectAnswer={selectAnswer}
+                answer={answer}
+                type={quest?.type}
+            />)}
+        </AnswerList>
     </div>;
 }
