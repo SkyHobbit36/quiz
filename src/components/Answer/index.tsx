@@ -1,16 +1,16 @@
 import { AnswerStatus, QuestType } from '../../constants';
-import { Answer } from '../../interfaces/quest.interface';
 import { ReactComponent as CloudSVG } from './cloud.svg';
 import './style.css';
 import { useRef } from 'react';
+import { observer } from 'mobx-react-lite';
+import { AnswerStore } from '../../store/answer.ts';
 
 type AnswerProps = {
     type: QuestType;
-    answer: Answer;
-    selectAnswer: (select: number) => void;
+    answer: AnswerStore;
 }
 
-export const AnswerComponent = ({ answer, selectAnswer, type }: AnswerProps) => {
+export const AnswerComponent = observer(({ answer, type }: AnswerProps) => {
     const degRef = useRef<number>(Math.floor(Math.random() * 360 - 180));
 
     const additionalClasses = ''
@@ -26,7 +26,7 @@ export const AnswerComponent = ({ answer, selectAnswer, type }: AnswerProps) => 
                 <div
                     className={'answer' + additionalClasses}
                     key={answer.id}
-                    onClick={() => selectAnswer(answer.id)}
+                    onClick={() => answer.check()}
                 >{answer.id}</div>
             </div>;
 
@@ -36,7 +36,7 @@ export const AnswerComponent = ({ answer, selectAnswer, type }: AnswerProps) => 
                 <div
                     className={'answer' + additionalClasses}
                     key={answer.id}
-                    onClick={() => selectAnswer(answer.id)}
+                    onClick={() => answer.check()}
                 >{answer.description}</div>
             </div>;
 
@@ -44,7 +44,7 @@ export const AnswerComponent = ({ answer, selectAnswer, type }: AnswerProps) => 
             return <div
                 className={'answer answer-text' + additionalClasses}
                 key={answer.id}
-                onClick={() => selectAnswer(answer.id)}
+                onClick={() => answer.check()}
             >{answer.description}</div>;
     }
-};
+});

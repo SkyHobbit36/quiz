@@ -2,9 +2,9 @@ import { AnswerStatus, QuestType } from '../constants';
 
 export interface Answer {
     id: number;
-    status?: AnswerStatus;
+    questId?: number;
     description?: string;
-    checked?: boolean;
+    status?: AnswerStatus;
 }
 
 export interface Quest {
