@@ -6,4 +6,4 @@
 
 ## Technologies
 
-React + TypeScript + Vite + Tilewind CSS
+React + TypeScript + Vite + MobX
