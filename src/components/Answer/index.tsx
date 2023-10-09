@@ -2,6 +2,7 @@ import { AnswerStatus, QuestType } from '../../constants';
 import { Answer } from '../../interfaces/quest.interface';
 import { ReactComponent as CloudSVG } from './cloud.svg';
 import './style.css';
+import { useRef } from 'react';
 
 type AnswerProps = {
     type: QuestType;
@@ -9,18 +10,18 @@ type AnswerProps = {
     selectAnswer: (select: number) => void;
 }
 
-export function AnswerComponent({ answer, selectAnswer, type }: AnswerProps) {
-    const additionalClasses = ''
-        + answer.status === AnswerStatus.CORRECT ? ' answer-correct' : ''
-            + answer.status === AnswerStatus.WRONG ? ' answer-wrong' : '';
+export const AnswerComponent = ({ answer, selectAnswer, type }: AnswerProps) => {
+    const degRef = useRef<number>(Math.floor(Math.random() * 360 - 180));
 
-    const deg = Math.floor(Math.random() * 360 - 180);
+    const additionalClasses = ''
+    + answer.status === AnswerStatus.CORRECT ? ' answer-correct' : ''
+    + answer.status === AnswerStatus.WRONG ? ' answer-wrong' : '';
 
     switch (type) {
         case QuestType.IMAGES:
             return <div className='answer-images'>
                 <CloudSVG style={{
-                    transform: `rotate(${deg}deg)`
+                    transform: `rotate(${degRef.current}deg)`
                 }} />
                 <div
                     className={'answer' + additionalClasses}
@@ -46,5 +47,4 @@ export function AnswerComponent({ answer, selectAnswer, type }: AnswerProps) {
                 onClick={() => selectAnswer(answer.id)}
             >{answer.description}</div>;
     }
-
-}
+};

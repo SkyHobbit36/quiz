@@ -9,9 +9,10 @@ import { AnswerComponent } from '../../components/Answer';
 import { AnswerList } from '../../components/AnswerList';
 
 export function QuestComponent() {
+    console.log('Render QuestComponent');
     const [quest, setQuest] = useState<Quest>(questList[1]);
 
-    function selectAnswer(select: number) {
+    const selectAnswer = (select: number) => {
         if (!quest) {
             return;
         }
@@ -30,7 +31,7 @@ export function QuestComponent() {
                 return answer;
             }),
         });
-    }
+    };
 
     return <div className="quest">
         <div className="question">{quest?.question}</div>
@@ -40,6 +41,7 @@ export function QuestComponent() {
                 selectAnswer={selectAnswer}
                 answer={answer}
                 type={quest?.type}
+                key={answer.id}
             />)}
         </AnswerList>
     </div>;
